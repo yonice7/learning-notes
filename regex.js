@@ -38,4 +38,4 @@ let regex = /t[a-z]*i/; //greedy
 let regex2 = /t[a-z]*?i/; //lazy
 let text = "<h1>Winter is coming</h1>";
 let myRegex4 = /<.*>/; // greedy
-let myRegex4 = /<.*>/; // lazy
+let myRegex5 = /<.*>/; // lazy
