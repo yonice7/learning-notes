@@ -116,3 +116,12 @@ while (dice !== 6) {
   dice = Math.trunc(Math.random() * 6) + 1;
   if (dice === 6) console.log("Loop is about to end...");
 }
+
+// JavaScript behind the scenes
+// JavaScript is a Just-in-time (JIT) compilation: Entire code is converted into machine code at once then executed immediately
+/*
+- Scoping asks the question "Where do variables live?" or "Where can we acceess certain variables or where not"
+- There are 3 types of scope y JS: the global scope, scopes defined by functions and scopes defined by blocks;
+- Only let and const variables are block-scoped. Variables declared with var end up in the closest function scope;
+- In JavaScript, we have lexical scoping, so the rules of where we can access variables are based on exactly where in the code function and blocks are written
+*/
