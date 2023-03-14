@@ -119,9 +119,31 @@ while (dice !== 6) {
 
 // JavaScript behind the scenes
 // JavaScript is a Just-in-time (JIT) compilation: Entire code is converted into machine code at once then executed immediately
+
+/* Execution Context
+- Variable Environment
+- Scope chain
+- this keyword
+*/
+
 /*
+Scope chain
 - Scoping asks the question "Where do variables live?" or "Where can we acceess certain variables or where not"
 - There are 3 types of scope y JS: the global scope, scopes defined by functions and scopes defined by blocks;
 - Only let and const variables are block-scoped. Variables declared with var end up in the closest function scope;
 - In JavaScript, we have lexical scoping, so the rules of where we can access variables are based on exactly where in the code function and blocks are written
+- Every scope always has access to all the variables from all its outer scopes. This is the scope chain
+- When a variable is no the current scope, the engine looks up in the scope chain until it finds the variable it's looking for. The is called variable lookup
+- The scope chain is a one-way street: a scope will never, have access to the variables of a inner scope
+- The scope chain has nothing to do with the order in which functions were called. It does not affect the scope chain at all
+*/
+
+/*
+Variable Environment
+- Hoisting makes some types of variables accessible/usable in the code before they are actually declared
+- Why TDZ? Makes it easier to avoid and catch errors: accesing variables declaration is bad practice and should be avoided
+- function declarations: hoisted:yes, initial value:actual funnction, scope: block
+- var variables: hoisted:yes, initial value:undefined, scope:block
+- let and const variables: hoisted:no, initial value: <uninitialized>, TDZ, scope:block
+- function expressions and arrows: Depends if using var or let/const --> same behavior as variables
 */
