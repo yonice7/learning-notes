@@ -147,3 +147,14 @@ Variable Environment
 - let and const variables: hoisted:no, initial value: <uninitialized>, TDZ, scope:block
 - function expressions and arrows: Depends if using var or let/const --> same behavior as variables
 */
+
+/* 
+The this keyword
+
+- Takes the value of (points to) the "owner" of the function in which the this keyword is used
+- this is not static. It depends on how the function is called, and its value is only assigned when the function is actually called
+- Method --> this = <Object that is calling the method>
+- Simple functional call --> this = undefined --> In strict mode! Otherwise: window (in the browser)
+- Arrow functions --> this = <this of surrounding function (lexical this)>
+- Event listener --> this = <DOM element that the handler is attached to>
+*/
