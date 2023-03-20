@@ -158,3 +158,18 @@ The this keyword
 - Arrow functions --> this = <this of surrounding function (lexical this)>
 - Event listener --> this = <DOM element that the handler is attached to>
 */
+
+/* 
+Primitives vs Objects
+
+- Primitives: Number, String, Boolean, Undefined, Null, Symbol, BigInt
+- Stored in the Call Stack
+- A value in certain address (in memory) is immutable
+- When the value of a variable is changed a new address in memory is assigned to it
+
+- Objects: Object literal, Arrrays, Functions, Many more...
+- Stored in the Heap
+- A new variable gets an address (in memory) assigned and its value is an address from the heap (reference)
+- When a value changes in an object it changes not in the call stack but in the heap
+- When creating a new object out of another one, we're pointing to the same address in the heap
+*/
