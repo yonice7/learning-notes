@@ -173,3 +173,17 @@ Primitives vs Objects
 - When a value changes in an object it changes not in the call stack but in the heap
 - When creating a new object out of another one, we're pointing to the same address in the heap
 */
+// Right way to copy objects
+const jessica = {
+  firstName: "Jessica",
+  lastName: "Williams",
+  age: 27,
+};
+
+// Object.assign({}, <variable>) creates a shallow copy
+// we'll learn later in the course how to create a deep clone
+const jessicaCopy = Object.assign({}, jessica);
+jessicaCopy.lastName = "Davis";
+
+console.log("Before marriage: ", jessica);
+console.log("After marriage: ", jessicaCopy);
