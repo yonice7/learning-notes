@@ -187,3 +187,31 @@ jessicaCopy.lastName = "Davis";
 
 console.log("Before marriage: ", jessica);
 console.log("After marriage: ", jessicaCopy);
+
+// Array Destructuring
+
+const restaurant = {
+  name: "Classico Italiano",
+  location: "Via Angelo Tavanti 23, Firenze, Italy",
+  categories: ["Italian, Pizzeria, Vegetarian", "Organic"],
+  starterMenu: ["Focaccia", "Bruschetta", "Garlic Bread", "Caprese Salad"],
+  mainMenu: ["Pizza", "Pasta", "Risotto"],
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+};
+
+const [x, y, z] = restaurant.mainMenu;
+const [main, , secondary] = restaurant.categories;
+[main, secondary] = [secondary, main]; // reassigning values (switching)
+
+// Receive 2 return values from a function
+const [starter, mainCourse] = restaurant.order(2, 0);
+
+// Destructuring nested arrays
+const nested = [2, 4, [5, 6]];
+// const [i, , j] = nested;
+const [i, , [j, k]] = nested; // this will return separate variables
+
+// Default values
+const [p = 1, q = 1, r = 1] = [8, 9];
