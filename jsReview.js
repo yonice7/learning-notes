@@ -248,3 +248,27 @@ const {
 let a = 111;
 let b = 999;
 const obj = { a: 23, b: 7, c: 14 };
+
+({ a, b } = obj); // override the initial (let) variables
+
+// The spread operator ...
+
+const arr = [7, 8, 9];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+const newArr = [1, 2, ...arr];
+const menu2 = [...restaurant.starterMenu, ...restaurant.mainMenu];
+const jonasName = "Jonas";
+const letters = [...str, " ", "S."];
+
+// Rest patter and parameters
+
+const [ar, br, ...others] = [1, 2, 3, 4, 5];
+
+// used in a function
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+};
+
+const xAdd = [23, 5, 7];
+add(...xAdd);
