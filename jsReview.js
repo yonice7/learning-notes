@@ -260,7 +260,7 @@ const menu2 = [...restaurant.starterMenu, ...restaurant.mainMenu];
 const jonasName = "Jonas";
 const letters = [...str, " ", "S."];
 
-// Rest patter and parameters
+// Rest pattern and parameters
 
 const [ar, br, ...others] = [1, 2, 3, 4, 5];
 
