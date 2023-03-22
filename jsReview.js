@@ -199,6 +199,21 @@ const restaurant = {
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0, // opens 24 hours
+      close: 24,
+    },
+  },
+  orderDelivery: function (obj) {},
 };
 
 const [x, y, z] = restaurant.mainMenu;
@@ -215,3 +230,21 @@ const [i, , [j, k]] = nested; // this will return separate variables
 
 // Default values
 const [p = 1, q = 1, r = 1] = [8, 9];
+
+// Object Destructuring
+
+const { name, openingHours, categories } = restaurant;
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant; // assigning a different name to the variables
+const { menu = [], starterMenu: starters = [] } = restaurant; // default values
+const {
+  fri: { open, close },
+} = openingHours; // nested values
+
+// Mutating variables
+let a = 111;
+let b = 999;
+const obj = { a: 23, b: 7, c: 14 };
