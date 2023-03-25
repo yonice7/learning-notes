@@ -258,7 +258,7 @@ const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
 const newArr = [1, 2, ...arr];
 const menu2 = [...restaurant.starterMenu, ...restaurant.mainMenu];
 const jonasName = "Jonas";
-const letters = [...str, " ", "S."];
+const letters = [...jonasName, " ", "S."];
 
 // Rest pattern and parameters
 
