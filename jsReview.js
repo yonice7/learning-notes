@@ -272,3 +272,5 @@ const add = function (...numbers) {
 
 const xAdd = [23, 5, 7];
 add(...xAdd);
+
+//
