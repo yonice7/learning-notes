@@ -264,6 +264,9 @@ const letters = [...jonasName, " ", "S."];
 
 const [ar, br, ...others] = [1, 2, 3, 4, 5];
 
+// objects
+const { sat, ...weekdays } = restaurant.openingHours;
+
 // used in a function
 const add = function (...numbers) {
   let sum = 0;
@@ -273,4 +276,17 @@ const add = function (...numbers) {
 const xAdd = [23, 5, 7];
 add(...xAdd);
 
-//
+// Short circuiting (&& and ||)
+
+// Use ANY data type, return ANY data type, short-circuiting
+console.log(3 || "Johnny");
+console.log("" || "Johnny"); // "" it's a falsy value
+console.log(true || 0); // true value
+console.log(undefined || null); // undefined is a falsy value
+console.log(undefined || 0 || "" || "Hello" || 23 || null); // "Hello is the fist truthy value"
+
+// restaurant.numGuests = 23 -- won't work if the value is 0 because it's false
+const guests2 = restaurant.numGuests || 10; // if restaurant.numGuests is undefined it'll return 10 i.e setting default values
+
+// AND
+console.log("Hello" && 23 && null && "jonas"); // returns null because it's false
