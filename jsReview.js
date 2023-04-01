@@ -290,3 +290,20 @@ const guests2 = restaurant.numGuests || 10; // if restaurant.numGuests is undefi
 
 // AND
 console.log("Hello" && 23 && null && "jonas"); // returns null because it's false
+
+// Nullish operator = null and undefined (0 or "")
+let restaurantGuests = 0;
+const guestCorrect = restaurantGuests ?? 10; // it'll return 0
+
+// Logical assignment operators
+
+const rest1 = {
+  name: "Capri",
+  numGuests: 20,
+};
+
+const rest2 = {
+  name: "La Piazza",
+  owner: "Giovanni Rossi",
+};
+rest2.numGuests = rest1.numGuests || 10;
