@@ -306,4 +306,15 @@ const rest2 = {
   name: "La Piazza",
   owner: "Giovanni Rossi",
 };
-rest2.numGuests = rest1.numGuests || 10;
+rest1.numGuests = rest1.numGuests || 10; // returns numbers of guest because it's already assigned
+rest2.numGuests = rest2.numGuests || 10; // returns 10 because it has not guest n# assigned
+
+// exactly the same as the previous two lines
+rest1.numGuests ||= 10;
+rest2.numGuests ||= 10;
+// what if the assigned number is a 0, instead of using || we use the nullish operator ??
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+// if the first value is true, return the second one, short-circuting
+rest2.owner = rest2.owner && "<ANONYMOUS>";
+rest1.owner = rest1.owner && "<ANONYMOUS>"; // it'll return undefined because the 1st value is falsy
