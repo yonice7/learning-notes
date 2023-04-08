@@ -352,3 +352,19 @@ const restaurantExample = {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 };
+
+// optional chaining
+if (restaurantExample.openingHours2 && restaurantExample.openingHours2.mon)
+  console.log(restaurantExample.openingHours2.mon.open); // checks if they exist because if the wouldn't it returns an error
+// optional chaining, better way
+console.log(restaurantExample.openingHours2.mon?.open); // if restaurantExample.openingHours2.mon it's false, it'll return undefined instead of an error
+console.log(restaurantExample.openingHours2?.mon?.open); // if restaurantExample.openingHours2 it's false, it'll return undefined instead of an error
+
+const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+for (const day of days) {
+  restaurantExample.openingHours2[day]?.open ?? "closed";
+  console.log(`On ${day}, we open at ${open}`);
+}
+// arrays
+const users = [{ name: "Johnny", email: "johnny@email.gg" }];
+console.log(users[0]?.name ?? "User array empty");
