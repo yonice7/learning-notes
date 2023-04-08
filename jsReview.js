@@ -318,3 +318,37 @@ rest2.numGuests ??= 10;
 // if the first value is true, return the second one, short-circuting
 rest2.owner = rest2.owner && "<ANONYMOUS>";
 rest1.owner = rest1.owner && "<ANONYMOUS>"; // it'll return undefined because the 1st value is falsy
+
+// Iterating over arrays, for-of loop
+
+const menu3 = [...restaurant.starterMenu];
+for (const item of menu3) console.log(item); // will loop over the entire array and each iteration will perform the command
+
+for (const item of menu3.entries()); // the method .entries() is an array iterator that returns the index of each element
+for (const item of menu3.entries()) {
+  console.log(`${item[0] + 1}: ${item[1]}`); // another way to do it: >>const [i, el] of menu3.entries() >>`${i + 1} : ${el}`
+}
+
+// Enhancing Object Literals (ES6)
+// inside object just call another object
+
+const openingHours2 = {
+  thu: {
+    open: 0,
+    close: 23,
+  },
+  fri: {
+    open: 0,
+    close: 23,
+  },
+};
+
+const restaurantExample = {
+  mainMenu: ["Fried Chicken", "Hamburguer", "Empanadas"],
+  starterMenu: ["Gyozas", "Tenders", "Fries"],
+  openingHours2, // you just need to call the variable
+  // (methods) instead of >> function order(starterIndex, mainIndex)
+  order(starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+};
