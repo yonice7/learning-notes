@@ -1,3 +1,4 @@
+/* Fist challenge
 const game = {
   team1: {
     name: "Bayern Munich",
@@ -46,24 +47,24 @@ const [players1, players2] = game.players;
 [game.team1.gk, ...game.team1.fieldPlayers] = players1;
 [game.team2.gk, ...game.team2.fieldPlayers] = players2;
 
-/*
+
 console.log(game.team1.gk);
 console.log(game.team2.gk);
 console.log(game.team1.fieldPlayers);
 console.log(game.team2.fieldPlayers);
-*/
+
 
 // 3
 const allPlayers = players1.concat(players2);
 // console.log(allPlayers);
 
 // 4
-/*
+
 //First approach, not good
 const players1Final = players1.push("Thiago", "Coutinho", "Perisic");
 console.log(players1Final);
 console.log(players1);
-*/
+
 
 const players1Final = players1.concat("Thiago", "Coutinho", "Perisic");
 //console.log(players1Final);
@@ -104,3 +105,7 @@ printGoals2(...game.scored);
 // 7
 game.odds.team1 < game.odds.team2 &&
   console.log("Team 1 is more likely to win");
+*/
+
+// Second challenge
+// 1
