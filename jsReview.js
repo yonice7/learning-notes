@@ -142,7 +142,7 @@ Scope chain
 Variable Environment
 - Hoisting makes some types of variables accessible/usable in the code before they are actually declared
 - Why TDZ? Makes it easier to avoid and catch errors: accesing variables declaration is bad practice and should be avoided
-- function declarations: hoisted:yes, initial value:actual funnction, scope: block
+- function declarations: hoisted:yes, initial value:actual function, scope: block
 - var variables: hoisted:yes, initial value:undefined, scope:block
 - let and const variables: hoisted:no, initial value: <uninitialized>, TDZ, scope:block
 - function expressions and arrows: Depends if using var or let/const --> same behavior as variables
