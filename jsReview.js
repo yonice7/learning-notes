@@ -273,7 +273,6 @@ const add = function (...numbers) {
   for (let i = 0; i < numbers.length; i++) sum += numbers[i];
 };
 
-const xAdd = [23, 5, 7];
 add(...xAdd);
 
 // Short circuiting (&& and ||)
