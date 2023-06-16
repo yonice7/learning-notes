@@ -430,3 +430,44 @@ rest
 
 console.log(rest.get("name"));
 console.log(rest.get(true));
+// console.log(rest.get("true")); // This will return undefined, bc the key is actually a boolean
+// console.log(rest.get("1")); // This will return undefined, bc the key is actually a boolean
+const time = 21; // this is suppose to be the "current time", we'll learn how to really get it later in the course
+console.log(rest.get(time > rest.get("open") && time < rest.get("close")));
+console.log(rest.has("categories")); // search if the map contains certain key, returns a boolean ==> true or false
+rest.delete(2); // delete the key
+console.log(rest.size); // returns the items
+// console.log(rest.clear); // removes all elements in the map;
+
+// Another way to create maps
+const question = new Map([
+  ["question", "What is the best programming language in the world?"],
+  [1, "C"],
+  [2, "Java"],
+  [3, "JavaScript"],
+  ["correct", 3],
+  [true, "Correct"],
+  [false, ["Try again!"]],
+]); // this structure is very similar to an object one
+console.log(question);
+
+// converting an object to a map
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+
+// Map iteration
+console.log(question.get("question"));
+for (const [key, value] of question) {
+  if (typeof key === "number") console.log(`Answer ${key}: ${value}`);
+}
+const answer = Number(prompt("Your answer"));
+console.log(answer);
+
+console.log(question.get(question.get("correct") === answer));
+
+// convert a map to an array
+console.log(...question);
+// other Map methods
+console.log(question.entries());
+console.log([...question.keys()]); // w/out the dots it returns a MapIterator
+console.log([...question.values()]); // w/out the dots it returns a MapIterator
