@@ -471,3 +471,20 @@ console.log(...question);
 console.log(question.entries());
 console.log([...question.keys()]); // w/out the dots it returns a MapIterator
 console.log([...question.values()]); // w/out the dots it returns a MapIterator
+
+// Data structures overview
+
+// Sources of data
+/*
+1. From the program itself: Data written directly in source code (e.g. status messages)
+2. From the UI: Data input from the user or data written in DOM (e.g. tasks in todo app)
+3. From external sources: Data fetched for example from web API (e.g. recipe objects) .json files
+
+--> Collection of data
+- Data structure 
+  - Array or Sets (simple list?)
+  - Object or Maps (key/value pairs?) --> keys allow us to describe values
+
+
+                                      
+*/
