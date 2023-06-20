@@ -519,3 +519,34 @@ Objects vs Maps
   - Use when you simply need to map key to values
   - Use when you need keys that are not strings
 */
+
+// Strings
+
+const airline = "TAP Air Portugal";
+const plane = "A320";
+
+console.log(plane[0]); // getting the characters by position
+console.log(plane[1]);
+console.log(plane[2]);
+console.log("B737"[0]);
+console.log(airline.length); // getting the len of the array
+console.log("B737".length);
+console.log(airline.indexOf("r")); // position in the string, first ocurrence
+console.log(airline.lastIndexOf("r")); // position in the string, last ocurrence
+console.log(airline.indexOf("Portugal")); // can search entire words
+console.log(airline.slice(4)); // will return "Air Portugal" starting on the input number it slices the string
+console.log(airline.slice(4, 7)); // specifying a start and end parameter
+console.log(airline.slice(-2));
+console.log(airline.slice(1, -2));
+
+// Create a function that receives an airplane seat and logs if it's a middle seat or not
+const checkMiddleSeat = function (seat) {
+  // B and E are middle seats
+  const s =
+    seat.slice(-1) === "B" || seat.slice(-1) === "E" ? "got" : "didn't get";
+  console.log(`You ${s} a middle seat`);
+};
+
+checkMiddleSeat("11B");
+checkMiddleSeat("23C");
+checkMiddleSeat("3E");
