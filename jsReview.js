@@ -578,4 +578,13 @@ console.log(priceUS);
 
 const announcement =
   "All passengers come to boarding door 23. Boarding door 23!";
-console.log(announcement.replace("door", "gate"));
+console.log(announcement.replace("door", "gate")); // replaces only the first instance
+console.log(announcement.replaceAll("door", "gate")); // replacing all instances
+console.log(announcement.replace(/door/g, "gate")); // sneak peek to regular expressions
+
+// booleans
+const newPlane = "Airbus A320neo";
+console.log(newPlane.includes("A320")); // returns: true
+console.log(newPlane.includes("Boeing")); // returns: false
+console.log(newPlane.startsWith("Air")); // returns: true, same for ("Ai") ("Airb") etc...
+console.log(newPlane.endsWith("neo")); // returns: true, same for ("Ai") ("Airb") etc...
