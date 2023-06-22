@@ -550,3 +550,32 @@ const checkMiddleSeat = function (seat) {
 checkMiddleSeat("11B");
 checkMiddleSeat("23C");
 checkMiddleSeat("3E");
+
+// More string methods
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+// Fix capitalization in name
+const passenger = "jOnAs"; // Jonas
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1); // first letter + starting on position one to all the word
+console.log(passengerCorrect);
+// Remove whitespaces
+const email = "hello@jonas.io";
+const loginEmail = "   Hello@Jonas.Io \n";
+
+// const lowerEmail = loginEmail.toLowerCase();
+// const trimmedEmail = lowerEmail.trim();
+// console.log(trimmedEmail);
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+console.log(email === normalizedEmail);
+
+// replacing
+const priceGB = "288,97L";
+const priceUS = priceGB.replace("L", "$").replace(",", ".");
+console.log(priceUS);
+
+const announcement =
+  "All passengers come to boarding door 23. Boarding door 23!";
+console.log(announcement.replace("door", "gate"));
