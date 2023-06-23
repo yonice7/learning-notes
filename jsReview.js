@@ -588,3 +588,23 @@ console.log(newPlane.includes("A320")); // returns: true
 console.log(newPlane.includes("Boeing")); // returns: false
 console.log(newPlane.startsWith("Air")); // returns: true, same for ("Ai") ("Airb") etc...
 console.log(newPlane.endsWith("neo")); // returns: true, same for ("Ai") ("Airb") etc...
+
+// split
+console.log("a+very+nice+string".split("+"));
+console.log("Jonas Schmedtmann".split(" "));
+const [firstName, lastName] = "Jonas Schmedtmann".split(" ");
+
+// join
+const newName = ["Mr", firstName, lastName.toUpperCase()].join(" ");
+console.log(newName);
+
+// function to capitalize a name
+const capitalizeName = function (name) {
+  const names = name.split(" ");
+  const namesUpper = [];
+
+  for (const n of names) {
+    namesUpper.push(n[0].toUpperCase + n.slice(1));
+  }
+  console.log(namesUpper.join(" "));
+};
