@@ -608,3 +608,20 @@ const capitalizeName = function (name) {
   }
   console.log(namesUpper.join(" "));
 };
+
+// padding
+const message = "Go to gate 23!";
+console.log(message.padStart(25, "+")); // +++++++++++Go to the gate 23! --> until the string is 25 chars length
+console.log(message.padStart(25, "+").padEnd(35, "+"));
+// real life example: credit card masking
+const maskCreditCard = function (number) {
+  const str = number
+    .toString()
+    .slice(-4)
+    .padStart(number.toString().length, "*");
+  return str;
+};
+
+console.log(maskCreditCard(3513513452388114));
+
+// repeat
