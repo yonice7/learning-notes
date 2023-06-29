@@ -625,3 +625,12 @@ const maskCreditCard = function (number) {
 console.log(maskCreditCard(3513513452388114));
 
 // repeat
+const message2 = "Bad weather... All Departures Delayed... ";
+console.log(message2.repeat(5));
+
+const planesInLine = function (n) {
+  console.log(`There are ${n} planes in line ${"✈️".repeat(n)}`);
+};
+
+planesInLine(5);
+planesInLine(6);
