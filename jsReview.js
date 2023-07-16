@@ -618,7 +618,7 @@ const maskCreditCard = function (number) {
   const str = number
     .toString()
     .slice(-4)
-    .padStart(number.toString().length, "*");
+    .padStart(number.toString().length, "*"); // doesn't mean that it'll add .lenght "x" -- it'll add "*" to make a 16 length string
   return str;
 };
 
