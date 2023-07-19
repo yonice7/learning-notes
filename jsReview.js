@@ -567,7 +567,7 @@ const loginEmail = "   Hello@Jonas.Io \n";
 // const lowerEmail = loginEmail.toLowerCase();
 // const trimmedEmail = lowerEmail.trim();
 // console.log(trimmedEmail);
-const normalizedEmail = loginEmail.toLowerCase().trim();
+const normalizedEmail = loginEmail.toLowerCase().trim(); // removes whitespace from both ends of a string and returns a new string
 console.log(normalizedEmail);
 console.log(email === normalizedEmail);
 
