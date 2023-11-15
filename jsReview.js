@@ -133,7 +133,7 @@ Scope chain
 - Only let and const variables are block-scoped. Variables declared with var end up in the closest function scope;
 - In JavaScript, we have lexical scoping, so the rules of where we can access variables are based on exactly where in the code function and blocks are written
 - Every scope always has access to all the variables from all its outer scopes. This is the scope chain
-- When a variable is no the current scope, the engine looks up in the scope chain until it finds the variable it's looking for. This is called variable lookup
+- When a variable is not in the current scope, the engine looks up in the scope chain until it finds the variable it's looking for. This is called variable lookup
 - The scope chain is a one-way street: a scope will never, have access to the variables of a inner scope
 - The scope chain has nothing to do with the order in which functions were called. It does not affect the scope chain at all
 */
