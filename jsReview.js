@@ -278,6 +278,7 @@ add(...xAdd);
 // Short circuiting (&& and ||)
 
 // Use ANY data type, return ANY data type, short-circuiting
+// Returns the first truthy value
 console.log(3 || "Johnny");
 console.log("" || "Johnny"); // "" it's a falsy value
 console.log(true || 0); // true value
@@ -288,7 +289,7 @@ console.log(undefined || 0 || "" || "Hello" || 23 || null); // "Hello is the fis
 const guests2 = restaurant.numGuests || 10; // if restaurant.numGuests is undefined it'll return 10 i.e setting default values
 
 // AND
-console.log("Hello" && 23 && null && "jonas"); // returns null because it's false
+console.log("Hello" && 23 && null && "jonas"); // returns null because "null" it's false
 
 // Nullish operator = null and undefined (0 or "")
 let restaurantGuests = 0;
