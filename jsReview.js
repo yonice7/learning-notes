@@ -419,6 +419,11 @@ const arrayFromSet = [...staffUnique];
 
 // Maps
 
+/*
+Difference between Maps and Objects
+En resumen, los Map proporcionan más flexibilidad en cuanto a los tipos de claves y mantienen el orden de inserción, mientras que los objetos son más simples y se utilizan comúnmente para casos simples de clave-valor. La elección entre ambos depende de los requisitos específicos de tu aplicación. (ChatGPT)
+*/
+
 const rest = new Map();
 rest.set("name", "Classico Italiano"); // Add elements to the map
 rest.set(1, "Firenze, Italy");
