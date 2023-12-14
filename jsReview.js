@@ -536,7 +536,7 @@ console.log(plane[0]); // getting the characters by position
 console.log(plane[1]);
 console.log(plane[2]);
 console.log("B737"[0]);
-console.log(airline.length); // getting the len of the array
+console.log(airline.length); // getting the len of the string
 console.log("B737".length);
 console.log(airline.indexOf("r")); // position in the string, first ocurrence
 console.log(airline.lastIndexOf("r")); // position in the string, last ocurrence
