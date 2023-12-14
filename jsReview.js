@@ -289,9 +289,10 @@ console.log(undefined || 0 || "" || "Hello" || 23 || null); // "Hello is the fis
 const guests2 = restaurant.numGuests || 10; // if restaurant.numGuests is undefined it'll return 10 i.e setting default values
 
 // AND
+// Returns the first falsy value
 console.log("Hello" && 23 && null && "jonas"); // returns null because "null" it's false
 
-// Nullish operator = null and undefined (0 or "")
+// Nullish operator = null and undefined -- doesn't include the 0 (0 or "")
 let restaurantGuests = 0;
 const guestCorrect = restaurantGuests ?? 10; // it'll return 0
 
@@ -369,7 +370,7 @@ for (const day of days) {
 const users = [{ name: "Johnny", email: "johnny@email.gg" }];
 console.log(users[0]?.name ?? "User array empty");
 
-// looping over objects, it's actually looping over an array
+// looping over objects, it's actually looping over an array, Object.keys creates an array
 for (const day of Object.keys(openingHours2)) {
   console.log(day);
 }
