@@ -684,3 +684,41 @@ const createBooking = function (
 createBooking("LH123");
 createBooking("LH123", 2, 800);
 createBooking("LH123", undefined, 1000);
+
+// how passing arguments works: value vs. reference
+const flight = "LH234";
+const andy = {
+  name: "Andy Murray",
+  passport: 123456789,
+};
+
+const checkIn = function (flightNum, passenger) {
+  flightNum = "LH999";
+  passenger.name = "Mr." + passenger.name;
+
+  if (passenger.passport === 123456789) {
+    alert("Checked in");
+  } else {
+    alert("Wrong passport!");
+  }
+};
+
+checkIn(flight, andy);
+console.log(flight); // this returns LH234
+/*
+Why doesn't it return LH999, because flight is a primitive so 
+flightNum is basically a copy of the const: flight
+*/
+console.log(andy);
+/*
+Why it does return Mr. Andy Murray, when passing a reference type
+to a function, the reference of the object in the memory is copied
+it's exactly like doing
+const flightNum = flight
+const passenger = jonas --> reference of the object in the memory
+*/
+/*
+- Passing a primitive type to a function is basically as creating a copy, the value is copied
+- When passing an object to a function is basically as referencing that object in the memory heap,
+what it's changed in the copy will also be changed in the original
+*/
