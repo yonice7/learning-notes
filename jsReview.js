@@ -722,3 +722,20 @@ const passenger = jonas --> reference of the object in the memory
 - When passing an object to a function is basically as referencing that object in the memory heap,
 what it's changed in the copy will also be changed in the original
 */
+
+/*
+first-class and higher-order functions
+
+First-class functions
+- Javascript treats functions as first-class citizens
+- This means that functions are simply values
+- Functions are just another type of object
+* You store functions in variable or properties
+* Pass functions as arguments to other functions
+* Return functions from another functions
+* Call methods on functions
+
+High-order functions
+- A function that receives another function as an argument, that returns a new function, or both
+- This is only possible because of first-class functions
+*/
