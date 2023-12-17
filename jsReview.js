@@ -642,7 +642,7 @@ const planesInLine = function (n) {
 planesInLine(5);
 planesInLine(6);
 
-// String methods practice
+// string methods practice
 const flights =
   "_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30";
 
@@ -657,3 +657,30 @@ for (const flight of flights.split("+")) {
     .toUpperCase()} (${time.replace(":", "h")})`.padStart(43);
   console.log(output);
 }
+
+// A closer look to functions
+
+// default parameters
+const bookings = [];
+const createBooking = function (
+  flightNum,
+  numPassengers = 1,
+  price = 199 * numPassengers
+) {
+  //it could even be 199 * 1.2, this is es6
+  // ES5
+  // numPassengers = numPassengers || 1; // setting values by default is case there's no input
+  // price = price || 199;
+
+  const booking = {
+    flightNum,
+    numPassengers,
+    price,
+  };
+  console.log(booking);
+  bookings.push;
+};
+
+createBooking("LH123");
+createBooking("LH123", 2, 800);
+createBooking("LH123", undefined, 1000);
