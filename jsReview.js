@@ -768,3 +768,7 @@ const high5 = function () {
 };
 
 ["Jonas", "Martha", "Adam"].forEach(high5); // forEach is a built-in method, that we'll learn later
+/* Why callback functions are so much used
+- It's easier to split our code into more reusable and interconnected parts
+- Callback functions allow us to create abstracion, abstraction is hiding the details of some code implementation because we don't really care about all that detailed, every function has it's own task, we create levels of abstraction, it's like delegating different jobs to functions
+*/
