@@ -602,7 +602,7 @@ console.log("Jonas Schmedtmann".split(" "));
 const [firstName, lastName] = "Jonas Schmedtmann".split(" ");
 
 // join
-const newName = ["Mr", firstName, lastName.toUpperCase()].join(" ");
+const newName = ["Mr", firstName, lastName.toUpperCase()].join(" "); // joins different string variables into one
 console.log(newName);
 
 // function to capitalize a name
@@ -739,3 +739,32 @@ High-order functions
 - A function that receives another function as an argument, that returns a new function, or both
 - This is only possible because of first-class functions
 */
+
+// Functions accepting callback functions
+// regular function
+const oneWord = function (str) {
+  return str.replace(/ /g, "").toLowerCase();
+};
+
+// regular function
+const upperFirstWord = function (str) {
+  const [first, ...others] = str.split(" ");
+  return [first.toUpperCase(), ...others].join(" ");
+};
+
+// high-order function
+const transformer = function (str, fn) {
+  console.log(`Original string: ${str}`);
+  console.log(`Transformed string: ${fn(str)}`);
+  console.log(`Transformed by: ${fn.name}`); // reading the name property of the function fn.name where .name is a method
+};
+
+transformer("JavaScript is the best", upperFirstWord);
+transformer("JavaScript is the best", oneWord);
+
+// JS uses callbacks all the time
+const high5 = function () {
+  console.log("👋🏽");
+};
+
+["Jonas", "Martha", "Adam"].forEach(high5); // forEach is a built-in method, that we'll learn later
