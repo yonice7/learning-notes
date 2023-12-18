@@ -772,3 +772,29 @@ const high5 = function () {
 - It's easier to split our code into more reusable and interconnected parts
 - Callback functions allow us to create abstracion, abstraction is hiding the details of some code implementation because we don't really care about all that detailed, every function has it's own task, we create levels of abstraction, it's like delegating different jobs to functions
 */
+
+// functions returning functions
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+
+const greeterHey = greet("Hey");
+
+greeterHey("Jonas");
+greeterHey("Steven");
+// all of this works because of closures, we'll see it later
+
+// turning greet function into an arrow function
+const greet2 = (greeting) => (name) => console.log(`${greeting} ${name}`);
+
+// the call and apply methods
+const lufthansa = {
+  airline: 'Lufthansa',
+  iataCode: 'LH';
+  bookings: [];
+  book(flightNum, name) { // this is a new syntax without having to declared the function
+     console.log(`${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`);
+  }
+};
