@@ -791,10 +791,17 @@ const greet2 = (greeting) => (name) => console.log(`${greeting} ${name}`);
 
 // the call and apply methods
 const lufthansa = {
-  airline: 'Lufthansa',
-  iataCode: 'LH';
-  bookings: [];
-  book(flightNum, name) { // this is a new syntax without having to declared the function
-     console.log(`${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`);
-  }
+  airline: "Lufthansa",
+  iataCode: "LH",
+  bookings: [],
+  book(flightNum, name) {
+    // this is a new syntax without having to declared the function
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+    );
+    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
+  },
 };
+
+lufthansa.book(239, "Alessandro Del Piero");
+lufthansa.book(635, "John Smith");
