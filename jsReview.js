@@ -812,6 +812,7 @@ const eurowings = {
   iataCode: "EW",
   bookings: [],
   // book: lufthansa.book,
+  book: lufthansa.book.bind(eurowings), // correct way to do it
 };
 
 // Let's say we want to use the function book() from lufthansa object in the eurowing one, what we can do is write it outside of the object
@@ -832,3 +833,16 @@ const flightData = [583, "George Cooper"];
 book.apply(eurowings, flightData);
 console.log(eurowings);
 book.call(swiss, ...flightData); // professor prefers to use it like this
+
+// bind method
+const bookEW = book.bind(eurowings);
+bookEW(23, "Steve Willians");
+const bookEW23 = book.bind(eurowings, 23); // adding the 23 is called partial application
+bookEW23("Martha Cooper");
+bookEW23("Jonas Joe");
+// partial application
+const addTax = (rate, value) => value + value * rate;
+console.log(addTax(0.1, 200));
+
+const addVAT = addTax.bind(null, 0.23); // we add null because we don't care about the .this keyword in this particular case
+// addVAT = value => value + value * 0.23
