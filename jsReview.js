@@ -811,7 +811,7 @@ const eurowings = {
   name: "Eurowings",
   iataCode: "EW",
   bookings: [],
-  book: lufthansa.book,
+  // book: lufthansa.book,
 };
 
 // Let's say we want to use the function book() from lufthansa object in the eurowing one, what we can do is write it outside of the object
@@ -829,3 +829,6 @@ eurowings.book(111, "Mary Poppins"); // This also returns undefined because the 
 
 // apply() method
 const flightData = [583, "George Cooper"];
+book.apply(eurowings, flightData);
+console.log(eurowings);
+book.call(swiss, ...flightData); // professor prefers to use it like this
