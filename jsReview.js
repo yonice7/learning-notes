@@ -846,3 +846,28 @@ console.log(addTax(0.1, 200));
 
 const addVAT = addTax.bind(null, 0.23); // we add null because we don't care about the .this keyword in this particular case
 // addVAT = value => value + value * 0.23
+
+/* 
+Inmediately Invoked Function Expressions (IIFE)
+Sometimes we need a function that is only executed once
+-> Create the function and executed once
+*/
+// instead of writing it and save it to a variable
+const ruOnce = function () {
+  console.log("This will never run again");
+};
+
+// we write it like this, if we don't use parenthesis, it'll return an error saying that it requires a function name
+// by doing this we transform the statement into an expression
+(function () {
+  console.log("This will never run again");
+})();
+
+// another way of doing it
+(() => console.log("This will ALSO never run again"))();
+
+// IIFE are not that used in modern javascript, becausen if we want to create private variables, we can create a block, like this:
+{
+  const isPrivate = 23;
+  var notPrivate = 46;
+}
