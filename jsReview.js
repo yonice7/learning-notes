@@ -805,3 +805,27 @@ const lufthansa = {
 
 lufthansa.book(239, "Alessandro Del Piero");
 lufthansa.book(635, "John Smith");
+
+// call() method
+const eurowings = {
+  name: "Eurowings",
+  iataCode: "EW",
+  bookings: [],
+  book: lufthansa.book,
+};
+
+// Let's say we want to use the function book() from lufthansa object in the eurowing one, what we can do is write it outside of the object
+const book = lufthansa.book; // this is possible because javascript has first-class functions
+book(23, "Sarah Williams"); // returns an error because it's a regular function, therefore this. keyword returns undefined
+// how do we solve this issue and use this. keyword depending on the object?
+
+book.call(eurowings, 23, "Sarah Williams"); // call is a method
+console.log(eurowings);
+
+book.call(lufthansa, 239, "Mary Cooper");
+console.log(lufthansa);
+
+eurowings.book(111, "Mary Poppins"); // This also returns undefined because the object doesn't have a key named 'airline'
+
+// apply() method
+const flightData = [583, "George Cooper"];
