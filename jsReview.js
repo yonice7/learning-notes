@@ -871,3 +871,57 @@ const ruOnce = function () {
   const isPrivate = 23;
   var notPrivate = 46;
 }
+
+/* 
+Closures
+
+In JavaScript, a closure is a function bundled together with references to its surrounding state, allowing it to retain access to variables from its outer (enclosing) scope even after that scope has finished executing. Closures provide a way to create private variables and maintain state across multiple function calls.
+
+A closure is like a backpack that a function carries around wherever it goes. This backpack has all the variables that were present in the environment where the function was created
+
+We do not have to manually create closures, this is a javascript feature that happen automatically. We can't even access closed-over variables explicitly. A closure is not a tangible javascript object
+*/
+
+const secureBooking = function () {
+  let passengerCount = 0;
+
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passengers`);
+  };
+};
+
+const booker = secureBooking();
+
+booker(); // 1 passenger
+booker(); // 2 passenger
+// we can access to closure info like this
+console.dir(booker); // anonymous() -> [[Scopes]] -> 0: Closure
+
+// more closure examples
+// Example 1
+let f;
+const g = function () {
+  const a = 23;
+  f = function () {
+    console.log(a * 2);
+  };
+};
+
+const h = function () {
+  const b = 777;
+  f = function () {
+    console.log(b * 2);
+  };
+};
+
+g();
+f(); // returns 46
+console.dir(f);
+
+// re-assigning f function
+h();
+f(); // returns 1554
+console.dir(f);
+
+// Example 2
