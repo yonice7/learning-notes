@@ -982,3 +982,34 @@ console.log(arr5[arr5.length - 1]);
 console.log(arr5.slice(-1));
 console.log(arr5.at(-1));
 console.log("jonas".at(0)); // also works on strings
+
+// forEach
+// without
+for (const movement of movements) {
+  if (movement > 0) {
+    console.log(`You deposited ${movement}`);
+  } else {
+    console.log(`You withdrew ${Math.abs(movement)}`);
+  }
+}
+// with
+movements.forEach(function (movement, index, array) {
+  // index and array (second paramenter is the index and the third is the full array)
+  if (movement > 0) {
+    console.log(`Movement ${index + 1} You deposited ${movement}`);
+  } else {
+    console.log(`Movement ${index + 1} You withdrew ${Math.abs(movement)}`);
+  }
+});
+
+// with Maps
+currencies.forEach(function (value, key, map) {
+  console.log(`${key}: ${value}`);
+});
+
+// with Sets
+const currenciesUnique = new Set(["USD", "GBP", "USD", "EUR", "EUR"]);
+console.log(currenciesUnique);
+currenciesUnique.forEach(function (value, key, map) {
+  console.log(`${key}: ${value}`);
+});
