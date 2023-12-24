@@ -937,3 +937,48 @@ const boardPassengers = function (n, wait) {
 };
 
 boardPassengers(180, 3);
+
+// Arrays
+
+const currencies = new Map([
+  ["USD", "United States dollar"],
+  ["EUR", "Euro"],
+  ["GBP", "Pound sterling"],
+]);
+
+const movements = [200, 450, -400, 3000, -650, -130];
+
+// slice
+let arr3 = ["a", "b", "c", "d", "e"];
+
+console.log(arr3.slice(2));
+console.log(arr3.slice(2, 4)); // the end parameter 4 is not included
+console.log(arr3.slice(-2));
+
+// splice, changes the original array and deletes elements
+arr3.splice(-1);
+console.log(arr3);
+arr3.splice(1, 2); // the second argument works differently, actually this deletes two elements starting from position 1, therefore this returns ["a", "d"]
+
+// reverse
+arr3 = ["a", "b", "c", "d", "e"];
+const arr4 = ["j", "i", "h", "g", "j"];
+console.log(arr4.reverse());
+console.log(arr4); // changes the original array
+
+// concat
+const letters2 = arr3.concat(arr4);
+console.log(letters2);
+console.log(...arr3, ...arr4); // returns the same result
+
+// join
+console.log(letters2.join("-"));
+
+// new at method
+const arr5 = [23, 11, 64];
+console.log(arr5[0]);
+console.log(arr5.at(0)); // it's the same
+console.log(arr5[arr5.length - 1]);
+console.log(arr5.slice(-1));
+console.log(arr5.at(-1));
+console.log("jonas".at(0)); // also works on strings
