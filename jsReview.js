@@ -1013,3 +1013,27 @@ console.log(currenciesUnique);
 currenciesUnique.forEach(function (value, key, map) {
   console.log(`${key}: ${value}`);
 });
+
+//map
+const movementsUSD2 = movements.map((mov) => mov * eurToUsd);
+
+// filter
+const deposits = movements.filter(function (mov) {
+  return mov > 0;
+});
+console.log(deposits);
+
+const withdrawals = movements.filter((mov) => mov < 0);
+
+// reduce
+// accumulator -> SNOWBALL
+const balance = movements.reduce(
+  (accumulator, cur, i, arr) => accumulator + cur,
+  0
+); // 0 is the inital value of the accumulator
+
+// the magic of chaining methods
+const totalDepositsUSD = movements
+  .filter((mov) => mov > 0)
+  .map((mov) => mov * eurToUSD)
+  .reduce((acc, mov) => acc + mov, 0);
