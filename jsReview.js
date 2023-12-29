@@ -1013,3 +1013,20 @@ console.log(currenciesUnique);
 currenciesUnique.forEach(function (value, key, map) {
   console.log(`${key}: ${value}`);
 });
+
+// the map Method
+// takes an array, loops over that array and in each iteration applies a callback function to the current array element and builds a new array
+//const movements = [200, 450, -400, 3000, -650, -130];
+// convert the movements to US dollars
+
+const eurToUsd = 1.1;
+
+const movementsUSD = movements.map(function(mov) {
+  return mov * eurToUsd;
+})
+
+// the filter Method
+// takes an array, loops over that array and in each iteration filters on a condition and builds a new array with only filtered elements
+
+// the reduce Method
+// reudeces all array elements down to one single value
