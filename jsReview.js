@@ -1018,15 +1018,34 @@ currenciesUnique.forEach(function (value, key, map) {
 // takes an array, loops over that array and in each iteration applies a callback function to the current array element and builds a new array
 //const movements = [200, 450, -400, 3000, -650, -130];
 // convert the movements to US dollars
-
 const eurToUsd = 1.1;
 
-const movementsUSD = movements.map(function(mov) {
+const movementsUSD = movements.map(function (mov) {
   return mov * eurToUsd;
-})
+});
+
+const movementsUSD2 = movements.map((mov) => mov * eurToUsd);
 
 // the filter Method
 // takes an array, loops over that array and in each iteration filters on a condition and builds a new array with only filtered elements
+// filter
+const deposits = movements.filter(function (mov) {
+  return mov > 0;
+});
+console.log(deposits);
+
+const withdrawals = movements.filter((mov) => mov < 0);
 
 // the reduce Method
 // reudeces all array elements down to one single value
+// accumulator -> SNOWBALL
+const balance = movements.reduce(
+  (accumulator, cur, i, arr) => accumulator + cur,
+  0
+); // 0 is the inital value of the accumulator
+
+// the magic of chaining methods
+const totalDepositsUSD = movements
+  .filter((mov) => mov > 0)
+  .map((mov) => mov * eurToUSD)
+  .reduce((acc, mov) => acc + mov, 0);
