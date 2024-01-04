@@ -1061,3 +1061,23 @@ const index = accounts.findIndex(
   acc => acc.username === currentAccount.username // finds the first item that returns true from the condition
 );
 */
+
+// some and every
+// includes:equality
+movements.includes(-130); // returns true, here we're testing equality
+
+// some: condition
+// ideally should actually be called "any"
+const anyDeposits = movements.some((mov) => mov > 0); // we don't test equality but condition
+// movements.some((mov) => mov > 5000)
+// movements.some((mov) => mov > 1500)
+console.log(anyDeposits);
+
+// every: condition if all the elements match the condition
+console.log(movements.every((mov) => mov > 0));
+
+// another way to call the function, separate callback
+const deposit = (mov) => mov > 0;
+console.log(movements.some(deposit));
+console.log(movements.every(deposit));
+console.log(movements.filter(deposit));
