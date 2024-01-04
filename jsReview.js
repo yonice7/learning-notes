@@ -1054,4 +1054,10 @@ const totalDepositsUSD = movements
 // loops over the array and returns an element of the array
 const firstWithdrawal = movements.find((mov) => mov < 0); // result is a boolean, it'll return the first element that satisfies the condition
 
-//
+// the findIndex Method
+// returns the index of the found element, to delete an element from an array we use splice() but we need to know the index
+/*
+const index = accounts.findIndex(
+  acc => acc.username === currentAccount.username // finds the first item that returns true from the condition
+);
+*/
