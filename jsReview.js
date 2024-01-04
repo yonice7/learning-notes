@@ -1049,3 +1049,7 @@ const totalDepositsUSD = movements
   .filter((mov) => mov > 0)
   .map((mov) => mov * eurToUSD)
   .reduce((acc, mov) => acc + mov, 0);
+
+// the find Method
+// loops over the array and returns an element of the array
+const firstWithdrawal = movements.find((mov) => mov < 0); // result is a boolean, it'll return the first element that satisfies the condition
