@@ -1082,4 +1082,25 @@ console.log(movements.some(deposit));
 console.log(movements.every(deposit));
 console.log(movements.filter(deposit));
 
-//
+// flat and flatMap
+const arr6 = [[1, 2, 3], [4, 5, 6], 7, 8];
+console.log(arr.flat()); // converts an array with some other arrays in it into just one
+
+const arrDeep = [[[1, 2], 3], [4, [5, 6]], 7, 8]; // let's try with a more complex array
+console.log(arrDeep.flat());
+
+/*
+const accountMovements = accounts.map((acc) => acc.movements);
+const allMovements = accountMovements.flat();
+const overalBalance = allMovements.reduce((acc, mov) => acc + mov, 0);
+*/
+
+const overalBalance = accounts
+  .map((acc) => acc.movements)
+  .flat()
+  .reduce((acc, mov) => acc + mov, 0);
+
+// map and flat are usually used together, therefore the method flatMap was created
+const overalBalance2 = accounts
+  .flatMap((acc) => acc.movements)
+  .reduce((acc, (mov) => acc + mov, 0));
