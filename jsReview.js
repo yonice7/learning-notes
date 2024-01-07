@@ -1083,6 +1083,7 @@ console.log(movements.every(deposit));
 console.log(movements.filter(deposit));
 
 // flat and flatMap
+
 const arr6 = [[1, 2, 3], [4, 5, 6], 7, 8];
 console.log(arr.flat()); // converts an array with some other arrays in it into just one
 
@@ -1124,3 +1125,17 @@ movements.sort((a, b) => {
 // improve this
 movements.sort((a, b) => a - b);
 movements.sort((a, b) => b - a);
+
+// More ways of creating and filling arrays
+
+const arr7 = [1, 2, 3, 4, 5, 6, 7];
+// we can generate arrays programatically
+const xrray = new Array(7); // this creates an array with empty elements, the 7 is the length, it's useful for only one thing, the fill() method
+// xrray.fill(1); // this fills the array with 1s,  that is [1, 1, 1, 1, 1, 1, 1, 1]
+xrray.fill(1, 3, 5); // 3 -> index start, 5 --> index end
+console.log(xrray);
+// we can also use fill in not empty arrays
+
+// Array.from
+// according to jonas this is better
+const y1 = Array.from({ length: 7 }, (_, i) => i + 1);
