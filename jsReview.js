@@ -1104,3 +1104,23 @@ const overalBalance = accounts
 const overalBalance2 = accounts
   .flatMap((acc) => acc.movements)
   .reduce((acc, (mov) => acc + mov, 0));
+
+// sorting arrays
+// strings
+const owners = ["Jonas", "Zach", "Adam", "Martha"];
+console.log(owners.sort());
+
+// numbers
+// ascending order
+movements.sort((a, b) => {
+  if (a > b) return 1;
+  if (b > a) return -1;
+});
+// descending order
+movements.sort((a, b) => {
+  if (a > b) return -1;
+  if (b > a) return 1;
+});
+// improve this
+movements.sort((a, b) => a - b);
+movements.sort((a, b) => b - a);
