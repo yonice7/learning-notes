@@ -1139,3 +1139,70 @@ console.log(xrray);
 // Array.from
 // according to jonas this is better
 const y1 = Array.from({ length: 7 }, (_, i) => i + 1);
+
+// Which array method to use?
+
+/*
+if we want to mutate
+
+add to original
+.push
+.unshift
+
+remove from original
+.pop
+.shift
+splice
+
+others
+.reverse
+.sort
+.fill
+*/
+
+/*
+A new array
+
+compute from original
+.map
+
+filter using condition
+.filter
+
+portion of original
+.slice
+
+adding original to other
+.concat
+
+flattening the original
+.flat
+.flatMao
+*/
+
+/*
+An array index
+.indexOf
+
+Based on test condition
+.findIndex
+
+An array element, based on test condition
+.find
+
+Know if array includes
+.includes
+
+based on test condition
+.some
+.every
+
+a new string
+.join
+
+to transform to value
+.reduce
+
+to just loop array
+.forEach
+*/
