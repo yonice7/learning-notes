@@ -1206,3 +1206,20 @@ to transform to value
 to just loop array
 .forEach
 */
+
+// Numbers, Dates, Intl and Timers
+
+// converting a string to number
+console.log(Number("23"));
+console.log(+"23"); // simpler way
+
+// parsing: parse a number from a string
+console.log(Number.parseInt("30px", 10)); // the 10 is the base number system
+console.log(Number.parseInt("e30", 10)); // for this to work the string has to start with a number
+console.log(Number.parseInt("2.5rem", 10)); // with decimals
+console.log(Number.parseFloat("2.5rem", 10)); // but it's better to use this method to float
+console.log(Number.isNaN(20)); // if it's false it's because it IS a number
+console.log(Number.isNaN("20"));
+console.log(Number.isNaN(+"20X")); // if it's tru it's because it IS NOT a number
+console.log(Number.isFinite(20)); // it's true because it's a number
+console.log(Number.isFinite(23 / 0)); // it's false because it's infinite
