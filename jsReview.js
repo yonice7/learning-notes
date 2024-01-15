@@ -1223,3 +1223,11 @@ console.log(Number.isNaN("20"));
 console.log(Number.isNaN(+"20X")); // if it's tru it's because it IS NOT a number
 console.log(Number.isFinite(20)); // it's true because it's a number
 console.log(Number.isFinite(23 / 0)); // it's false because it's infinite
+
+// math and rounding
+console.log(Math.sqrt(25));
+console.log(8 ** (1 / 3)); // only way to get the cubic root
+console.log(Math.max(5, 18, 23, 11, 2));
+console.log(Math.min(5, 18, 23, 11, 2));
+console.log(Math.PI);
+console.log(Math.trunc(Math.random() * 6) + 1); // Math.trunc removes the decimal part of a number, Math.random() returns random numbers between 0 and 1
