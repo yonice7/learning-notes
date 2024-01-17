@@ -1231,3 +1231,18 @@ console.log(Math.max(5, 18, 23, 11, 2));
 console.log(Math.min(5, 18, 23, 11, 2));
 console.log(Math.PI);
 console.log(Math.trunc(Math.random() * 6) + 1); // Math.trunc removes the decimal part of a number, Math.random() returns random numbers between 0 and 1
+// trunc
+console.log(Math.trunc(23.3));
+// round
+console.log(Math.round(23.9)); // to the nearest integer
+// ceil
+console.log(Math.ceil(23.3)); // will round to 24
+console.log(Math.ceil(23.9)); // will round to 24
+// floor
+console.log(Math.floor(23.3)); // will round to 23
+console.log(Math.floor(23.9)); // will round to 23
+console.log(Math.floor(-23.9)); // also works with negative numbers, result 24
+// rounding decimals
+console.log((2.7).toFixed(0));
+console.log((2.7).toFixed(3));
+console.log(+(2.345).toFixed(3)); // adding a + converst the result to a number because it's returned as a string
