@@ -1246,3 +1246,9 @@ console.log(Math.floor(-23.9)); // also works with negative numbers, result 24
 console.log((2.7).toFixed(0));
 console.log((2.7).toFixed(3));
 console.log(+(2.345).toFixed(3)); // adding a + converst the result to a number because it's returned as a string
+
+// remainder operator
+console.log(5 % 2); // 1
+console.log(8 % 3); // 2 -- only the integer part of a division
+console.log(6 % 2); // 0
+const isEven = (n) => 2 === 0;
