@@ -1252,3 +1252,43 @@ console.log(5 % 2); // 1
 console.log(8 % 3); // 2 -- only the integer part of a division
 console.log(6 % 2); // 0
 const isEven = (n) => 2 === 0;
+console.log(isEven(8));
+console.log(isEven(23));
+console.log(isEven(514));
+
+// numeric separators
+// 287,460,000,000
+const diameter = 287_460_000_000;
+console.log(diameter); // it ignores the underscores
+console.log(Number("230_000")); // it'll not work if you try to convert to a number from a string
+console.log(parseInt("230_000")); // only gets the 230
+
+/*
+BigInt 
+numbers are 64 bits, there are 64 1 and 0 to represent any given number
+where 53 are used for digits and the rest for storing the position of the decimal point and the sign
+there's a limit of how big can numbers be
+*/
+
+console.log(2 ** 53 - 1);
+console.log(Number.MAX_SAFE_INTEGER);
+
+console.log(2146819264127318274812471273127148127);
+console.log(2146819264127318274812471273127148127n);
+console.log("2146819264127318274812471273127148127n");
+console.log(BigInt(2146819264127318274812471273127148127)); // it should be use with not than big numbers
+
+// operations
+console.log(10000n + 10000n);
+console.log(7512763287238576823789238127481824n + 10000n);
+const huge = 1827489163287582374872392302738;
+const num = 23;
+console.log(huge * num); // returns error because cannot mix BigInt and other types
+console.log(huge * BigInt(num)); // works
+// exceptions
+console.log(20n > 15);
+console.log(20n === 20); // false
+console.log(20n == "20");
+console.log(huge + " is a big number!!!");
+// divisions
+console.log(10n / 3n); // it returns the closest BigInt, it cuts the decimal part off
