@@ -1292,3 +1292,27 @@ console.log(20n == "20");
 console.log(huge + " is a big number!!!");
 // divisions
 console.log(10n / 3n); // it returns the closest BigInt, it cuts the decimal part off
+
+// creating dates
+const now = new Date();
+console.log(now);
+
+console.log(new Date("Aug 02 2020 18:05:41"));
+console.log(new Date("December 24, 2015"));
+console.log(new Date(2037, 10, 19, 15, 23, 5));
+console.log(new Date(2037, 10, 31));
+console.log(new Date(0)); // the amount of miliseconds passed since the beginning of the Unix time
+console.log(new Date(3 * 24 * 60 * 1000)); // 3 days passed since the beginning of the Unix time
+
+// working with dates
+const future = new Date(2037, 10, 19, 15, 23, 5);
+console.log(future);
+console.log(future.getFullYear());
+console.log(future.getMonth());
+console.log(future.getDate()); // day
+console.log(future.getDay()); // day of the week
+console.log(future.getHours());
+console.log(future.getMinutes());
+console.log(future.getSeconds());
+console.log(future.toISOString()); // international standard
+console.log(future.getTime()); // passed since the beginning of the Unix time
