@@ -1329,7 +1329,12 @@ console.log(days1);
 // internationalizing dates
 const nowTime = new Date();
 const options = {
-  // we do this in order to not only display the date but the time as well
+  hour: "numeric", // we do this in order to not only display the date but the time as well
+  minute: "numeric",
+  day: "numeric",
+  month: "long", // can also be numeric or 2-digit
+  year: "numeric",
+  weekday: "long",
 };
-const dateIntl = new Intl.DateTimeFormat("en-US").format(nowTime); // en-GB, ar-SY, ja-JP
+const dateIntl = new Intl.DateTimeFormat("en-US", options).format(nowTime); // en-GB, ar-SY, ja-JP
 console.log(dateIntl);
